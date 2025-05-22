@@ -280,7 +280,7 @@ const bookAppointmentController = async (req, res) => {
         req.body.status = "pending";
         const newAppointment = new appointmentModel(req.body);
         await newAppointment.save();
-        const user = await userModel.findOne({ _id: req.body.doctorInfo.userId }); //add .body
+        const user = await userModel.findOne({ _id: req.body.doctorInfo.userId });
         user.notification.push({
             type: "New-appointment-request",
             message: `A nEw Appointment Request from ${req.body.userInfo.name}`,
