@@ -45,6 +45,7 @@ const updateProfileController = async (req, res) => {
 };
 
 
+
 const getDoctorByIdController = async (req, res) => {
   try {
     const doctor = await doctorModel.findOne({ _id: req.body.doctorId });
